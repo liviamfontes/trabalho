@@ -1,0 +1,103 @@
+Código Exemplo:
+def imprimir_info(nome, idade, cidade):
+    # Imprime o nome e idade separados por ", "
+    print(f"Nome: {nome}", f"Idade: {idade}", sep=", ", end=", ")
+    # Imprime a cidade, terminando com um ponto final
+    print(f"Cidade: {cidade}.")
+    
+# Exemplo de uso da função
+imprimir_info("Lívia", 28, "Rio de Janeiro")
+
+1- 
+def calculadora():
+    try:
+        # Pede ao usuário os dois números
+        num1 = float(input("Digite o primeiro número: "))
+        num2 = float(input("Digite o segundo número: "))
+        
+        # Pede ao usuário a operação desejada
+        operacao = input("Digite a operação desejada ('+', '-', '*', '/'): ")
+        
+        # Calcula e imprime o resultado com base na operação escolhida
+        if operacao == '+':
+            resultado = num1 + num2
+            print(f"O resultado de {num1} + {num2} é {resultado}.")
+        elif operacao == '-':
+            resultado = num1 - num2
+            print(f"O resultado de {num1} - {num2} é {resultado}.")
+        elif operacao == '*':
+            resultado = num1 * num2
+            print(f"O resultado de {num1} * {num2} é {resultado}.")
+        elif operacao == '/':
+            # Verifica se o divisor é zero para evitar divisão por zero
+            if num2 != 0:
+                resultado = num1 / num2
+                print(f"O resultado de {num1} / {num2} é {resultado}.")
+            else:
+                print("Erro: Divisão por zero não é permitida.")
+        else:
+            print("Operação inválida. Por favor, escolha entre '+', '-', '*', '/'.")
+    
+    except ValueError:
+        print("Erro: Entrada inválida. Por favor, insira números válidos.")
+
+# Exemplo de uso da função
+if __name__ == "__main__":
+    calculadora()
+
+3-
+def lista_de_compras():
+    # Pede ao usuário para digitar os itens separados por vírgula
+    entrada = input("Digite os itens da lista de compras, separados por vírgula: ")
+    
+    # Divide a entrada em itens usando a vírgula como delimitador e remove espaços extras
+    itens = [item.strip() for item in entrada.split(',')]
+    
+    # Imprime os itens da lista com a formatação desejada
+    for i, item in enumerate(itens, start=1):
+        print(f"Item {i}: {item}")
+
+# Exemplo de uso da função
+if __name__ == "__main__":
+    lista_de_compras()
+
+4-
+def celsius_para_fahrenheit():
+    try:
+        # Solicita ao usuário a temperatura em Celsius
+        celsius = float(input("Digite a temperatura em graus Celsius: "))
+        
+        # Converte a temperatura para Fahrenheit
+        fahrenheit = (celsius * 9/5) + 32
+        
+        # Imprime o resultado
+        print(f"A temperatura de {celsius}°C é equivalente a {fahrenheit}°F.")
+    
+    except ValueError:
+        print("Erro: Por favor, insira um número válido.")
+
+# Exemplo de uso da função
+if __name__ == "__main__":
+    celsius_para_fahrenheit()
+
+5-
+def coletar_nomes():
+    nomes = []
+    
+    while True:
+        nome = input("Digite um nome (ou 'sair' para encerrar): ").strip()
+        
+        if nome.lower() == 'sair':
+            break
+        
+        nomes.append(nome)
+    
+    # Imprime todos os nomes, cada um em uma linha
+    print("\nNomes digitados:")
+    for i, nome in enumerate(nomes, start=1):
+        print(f"Nome {i}: {nome}")
+
+# Exemplo de uso da função
+if __name__ == "__main__":
+    coletar_nomes()
+
